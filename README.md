@@ -33,24 +33,28 @@ Imaginator is fully customizable via `docker-compose.yml` file using these param
 ## Installation
 ### Using Docker
 ```
-git clone https://github.com/bit111/Imaginator/
+git clone https://github.com/bit111/Imaginator.git
 docker compose up -d --build
 # go to http://<IP>:<PORT>
 ```
 
 ### Using virtual environment (only for test!)
 ```
-git clone https://github.com/bit111/Imaginator/
+git clone https://github.com/bit111/Imaginator.git
 cd imaginator
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
+## TO DO
+- [ ] Using WSGI server insteaf of Flask for production environment.
 
-# Credits
-This work was inspired by https://examples.javacodegeeks.com/upload-a-file-with-python-flask/
+## Credits
+This work was inspired by https://examples.javacodegeeks.com/upload-a-file-with-python-flask/.
 
-# License
-Copyright (c) 2024. Available under the [GNU AFFERO GENERAL PUBLIC](https://www.gnu.org/licenses/agpl-3.0.en.html) LICENSE
+Default header logo by [Roman](https://pixabay.com/it/users/akitada31-172067/).
+
+## License
+Copyright (c) 2024. Available under the [GNU AFFERO GENERAL PUBLIC](https://www.gnu.org/licenses/agpl-3.0.en.html) LICENSE.
 
