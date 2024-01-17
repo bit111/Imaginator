@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Imaginator - File upload</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link href="/css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<main>
+				<div class="px-4 py-5 my-5 text-center">
+					<!-- header -->
+					<div class="mb-3 rounded-4 text-white jumbotron-image" style="background-image: url('{{ config.HEADER_LOGO }}');">
+						<div class="p-5 rounded-4" style="background-color: rgba(0, 0, 0, 0.6);">
+					    	<h2 class="mb-4">
+					    		{{ config.TITLE }}
+					    	</h2>
+							<p class="mb-4">
+								{{ config.CALL_TO_ACTION }}
+							</p>
+					  	</div>
+				  	</div>
+
+					{% with messages = get_flashed_messages(with_categories=true) %}
+						{% if messages %}
+							{% for category, message in messages %}
+								{% if category=='danger' or category=='warning' %}
+									{% set icon='bi bi-exclamation-triangle-fill' %}
+								{% elif category=='success' %}
+									{% set icon='bi bi-check-circle-fill' %}
+								{% endif %}
+								<div class="alert alert-{{category}}" role="alert">
+									<div class="d-flex flex-row align-items-center justify-content-center">
+										<div class="p-2">
+											<i class="{{ icon }}"></i>
+										</div>
+										<div class="p-2 text-start">
+											{{ message|safe }}
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						{% endif %}
+					{% endwith %}
+
+					<div class="py-3">
+						<form class="p-4 p-md-5 border rounded-3 bg-light" action="/" method="POST" enctype="multipart/form-data">
+							<small class="text-muted">Allowed extentions: 
+								<b>{% if config.ALLOWED_EXTENSIONS!='all' %}{{ config.ALLOWED_EXTENSIONS|join(', ') }}{% else %}all {% endif %}</b>
+							</small>
+							
+							<hr class="my-4">
+
+							<div class="form-floating mb-3">
+								<input type="text" class="form-control" id="author" name="author" placeholder="Your name..." required>
+								<label for="floatingPassword">Name</label>
+							</div>
+							<div class="mb-3">
+								<input type="file" {% if config.ALLOWED_EXTENSIONS!='all' %} accept="{{ config.ALLOWED_EXTENSIONS|join(',') }}" {% endif %} class="form-control custom_file" id="files" name="files" aria-describedby="inputGroupFileAddon04" aria-label="Upload" multiple required>
+							</div>
+							<button class="w-100 btn btn-lg btn-primary" type="submit"><i class="bi bi-cloud-arrow-up-fill"></i> Upload</button>
+							<hr class="my-4">
+							<small class="text-muted">Allowed extentions: 
+								<b>{% if config.ALLOWED_EXTENSIONS!='all' %}{{ config.ALLOWED_EXTENSIONS|join(', ') }}{% else %}all {% endif %}</b>
+							</small>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

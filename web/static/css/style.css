@@ -1,0 +1,11 @@
+.custom_file{
+  line-height: 2.75;
+  z-index: 999;
+}
+
+.jumbotron-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}

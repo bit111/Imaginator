@@ -9,7 +9,7 @@ Once you have configured the app on your server, simply generate a QR-code and p
 
 ## Requirements
 To work properly the project requires:
-- Python 3.10/3.11
+- Python 3.10
 - [Flask](https://pypi.org/project/Flask/)
 - [Werkzeug](https://pypi.org/project/Werkzeug/)
 

@@ -1,0 +1,20 @@
+version: "3.7"
+ 
+services:
+  imaginator:
+    build:
+      dockerfile: Dockerfile
+    image: "imaginator:latest"
+    container_name: "imaginator"
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      # map 'upload' and 'data' for persistence
+      - ./uploads:/app/uploads
+      - ./data/:/app/data
+    environment:
+      ALLOWED_EXT: '.jpg|.png'
+      # MAX_CONTENT_LENGTH: 6 # in MB
+      SECRET_KEY: mysecretkey
+      TITLE: "Imaginator"
+      CALL_TO_ACTION: "A simple multi-image uploader"

@@ -1,0 +1,4 @@
+*.sublime*
+**[Tt]est*
+
+venv/
