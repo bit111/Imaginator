@@ -1,6 +1,12 @@
 # Imaginator
 Imaginator is a simply **dockerized** multi-image upload app wrote in Python, Flask and Bootstrap 5 to allow users to quickly handle images (but also any other file) upload.
 
+![Screenshot of Imaginator](docs/img/screenshot.png?raw=true "Imaginator")
+
+The idea was born from the need to create a platform to allow event guests to share their photos with the organizer by uploading them to a physical server, without going through third-party clouds and/or paid services.
+
+Once you have configured the app on your server, simply generate a QR-code and print it on your event invitations!
+
 ## Requirements
 To work properly the project requires:
 - Python 3.10/3.11
