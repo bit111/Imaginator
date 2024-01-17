@@ -38,7 +38,7 @@ docker compose up -d --build
 # go to http://<IP>:<PORT>
 ```
 
-### Using virtual environment
+### Using virtual environment (only for test!)
 ```
 git clone https://github.com/bit111/Imaginator/
 cd imaginator
