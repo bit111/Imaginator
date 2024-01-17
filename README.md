@@ -22,10 +22,10 @@ For each upload, the system add an entry in a `SQLite` database with:
 
 With Imaginator you can choose what file extensions are allowed to upload (default: `all`).
 
-## Docker
+## Installation
 Imaginator run using [Docker](https://docker.com/) container to speed-up production process.
 
-### Configuration
+### Using Docker
 Imaginator is fully customizable via `docker-compose.yml` file using these parameters:
 
 | PARAMETER   |      DESCRIPTION      |  DEFAULT |
@@ -36,8 +36,7 @@ Imaginator is fully customizable via `docker-compose.yml` file using these param
 | HEADER_LOGO | Header background | `web/static/img/header.jpg` |
 | SECRET_KEY | Used by [Flask](https://explore-flask.readthedocs.io/en/latest/configuration.html) to sign cookies | `mysecretkey` (change it!) |
 
-## Installation
-### Using Docker
+#### Run
 ```
 git clone https://github.com/bit111/Imaginator.git
 docker compose up -d --build
