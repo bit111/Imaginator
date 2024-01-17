@@ -24,9 +24,7 @@ With Imaginator you can choose what file extensions are allowed to upload (defau
 
 ## Installation
 Imaginator run using [Docker](https://docker.com/) container to speed-up production process.
-
-### Using Docker
-Imaginator is fully customizable via `docker-compose.yml` file using these parameters:
+It is fully customizable via `docker-compose.yml` file using these parameters:
 
 | PARAMETER   |      DESCRIPTION      |  DEFAULT |
 |----------|-------------|---------------|
@@ -36,14 +34,22 @@ Imaginator is fully customizable via `docker-compose.yml` file using these param
 | HEADER_LOGO | Header background | `web/static/img/header.jpg` |
 | SECRET_KEY | Used by [Flask](https://explore-flask.readthedocs.io/en/latest/configuration.html) to sign cookies | `mysecretkey` (change it!) |
 
-#### Run
+To run with docker on Debian/Ubuntu:
 ```
 git clone https://github.com/bit111/Imaginator.git
 docker compose up -d --build
 # go to http://<IP>:<PORT>
 ```
 
-### Using virtual environment (only for test!)
+### Reverse Proxy
+Run Imaginator behind a reverse proxy:
+<details>
+  <summary>Nginx</summary>
+  Coming Soon...
+</details>
+
+## Development
+To run in development mode on Debian/Ubuntu, create a virtual environment and run it in this way:
 ```
 git clone https://github.com/bit111/Imaginator.git
 cd imaginator
